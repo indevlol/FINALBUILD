@@ -1,127 +1,128 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "bfobj_IDLE instance",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "bfobj_IDLE instance"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				29,
 				-4
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "bfobj_LEFT instance",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "bfobj_LEFT instance"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				7,
 				-17
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "bfobj_DOWN instance",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "bfobj_DOWN instance"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-17,
 				49
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "bfobj_UP instance",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "bfobj_UP instance"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-41,
 				5
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "bfobj_RIGHT instance",
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "bfobj_RIGHT instance"
+		},
+		{
+			"offsets": [
+				84,
+				81
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUPMISS",
+			"indices": [],
+			"name": "bfobj_UPMISS instance"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				83,
+				86
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "bfobj_LEFTMISS instance",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
 				84,
-				81
+				80
 			],
-			"anim": "singUPMISS",
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "bfobj_RIGHTMISS instance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				83,
+				82
+			],
+			"anim": "singUPmiss",
 			"fps": 24,
 			"name": "bfobj_UPMISS instance",
 			"indices": []
 		},
 		{
-			"offsets": [
-				83,
-				86
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singLEFTmiss",
 			"loop": false,
-			"name": "bfobj_LEFTMISS instance"
-		},
-		{
-			"offsets": [
-				84,
-				80
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHTmiss",
-			"loop": false,
-			"name": "bfobj_RIGHTMISS instance"
-		},
-		{
-			"offsets": [
-				83,
-				82
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singUPmiss",
-			"loop": false,
-			"name": "bfobj_UPMISS instance"
-		},
-		{
 			"offsets": [
 				76,
 				81
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWNmiss",
-			"loop": false,
-			"name": "bfobj_DOWNMISS instance"
+			"fps": 24,
+			"name": "bfobj_DOWNMISS instance",
+			"indices": []
 		},
 		{
-			"offsets": [
-				0,
-				0
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "HEY",
 			"loop": false,
-			"name": "bfobj_HEY instance"
+			"offsets": [
+				-6,
+				8
+			],
+			"anim": "HEY",
+			"fps": 24,
+			"name": "bfobj_HEY instance",
+			"indices": []
 		}
 	],
+	"vocals_file": "",
 	"no_antialiasing": false,
 	"image": "characters/bfobjectNEW",
 	"position": [
@@ -140,5 +141,6 @@
 		0
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 1,
+	"_editor_isPlayer": true
 }

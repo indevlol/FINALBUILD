@@ -1,0 +1,56 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				29
+			],
+			"anim": "gameover",
+			"fps": 24,
+			"name": "bfobj_GAMEOVER instance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				10
+			],
+			"anim": "confirm",
+			"fps": 24,
+			"name": "bfobj_GAMEOVERCONFIRM instance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				12
+			],
+			"anim": "loop",
+			"fps": 24,
+			"name": "bfobj_GAMEOVERLOOP instance",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/bfobjectNEWGAMEOVER",
+	"position": [
+		140,
+		420
+	],
+	"healthicon": "bfobject",
+	"flip_x": true,
+	"healthbar_colors": [
+		89,
+		232,
+		255
+	],
+	"camera_position": [
+		100,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}
