@@ -1,0 +1,80 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "FR_IDLE"
+		},
+		{
+			"offsets": [
+				127,
+				9
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "FR_LEFT"
+		},
+		{
+			"offsets": [
+				5,
+				-13
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "FR_DOWN"
+		},
+		{
+			"offsets": [
+				77,
+				41
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "FR_UP"
+		},
+		{
+			"offsets": [
+				-14,
+				2
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "FR_RIGHT"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/firey",
+	"position": [
+		0,
+		250
+	],
+	"healthicon": "firey",
+	"flip_x": false,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		60,
+		80
+	],
+	"sing_duration": 6.1,
+	"scale": 1,
+	"_editor_isPlayer": false
+}
