@@ -38,6 +38,7 @@ import objects.AttachedSprite;
 import objects.Character;
 import substates.Prompt;
 
+import states.PlayState;
 
 #if sys
 import flash.media.Sound;
@@ -144,6 +145,12 @@ class ChartingState extends MusicBeatState
 	var value2InputText:FlxUIInputText;
 	var currentSongName:String;
 
+	var ConstantPlayer1:FlxUIInputText;
+	var ConstantPlayer2:FlxUIInputText;
+	var ConstantGirlfriend:FlxUIInputText;
+	var ConstantStage:FlxUIInputText;
+
+
 	var zoomTxt:FlxText;
 
 	var zoomList:Array<Float> = [
@@ -188,8 +195,13 @@ class ChartingState extends MusicBeatState
 	var text:String = "";
 	public static var vortex:Bool = false;
 	public var mouseQuant:Bool = false;
+	var staticData:Dynamic;
+
+	
 	override function create()
 	{
+
+
 		if (PlayState.SONG != null)
 			_song = PlayState.SONG;
 		else
@@ -1032,6 +1044,45 @@ class ChartingState extends MusicBeatState
 		value2InputText = new FlxUIInputText(20, 150, 100, "");
 		blockPressWhileTypingOn.push(value2InputText);
 
+
+		var text:FlxText = new FlxText(20, 170, 0, "Constant Boyfriend :");
+		tab_group_event.add(text);
+		ConstantPlayer1 = new FlxUIInputText(20, 190, 100, "");
+		blockPressWhileTypingOn.push(ConstantPlayer1);
+
+
+		
+		var text:FlxText = new FlxText(20, 210, 0, "Constant Dad:");
+		tab_group_event.add(text);
+		ConstantPlayer2 = new FlxUIInputText(20, 230, 100, "");
+		blockPressWhileTypingOn.push(ConstantPlayer2);
+
+		
+		var text:FlxText = new FlxText(20, 250, 0, "Constant Girlfriend:");
+		tab_group_event.add(text);
+		ConstantGirlfriend = new FlxUIInputText(20, 270, 100, "");
+		blockPressWhileTypingOn.push(ConstantGirlfriend);
+
+		
+		var text:FlxText = new FlxText(20, 290, 0, "Constant Stage:");
+		tab_group_event.add(text);
+		ConstantStage = new FlxUIInputText(20, 310, 100, "");
+		blockPressWhileTypingOn.push(ConstantStage);
+
+	
+	
+	
+		if(FileSystem.exists(Paths.json(_song.song.toLowerCase() + "/StaticSettings"))) {
+			var settingsFromFile = File.getContent(Paths.json(_song.song.toLowerCase() + "/StaticSettings"));
+
+			var staticSongSettings:StaticSongSettings = haxe.Json.parse(settingsFromFile);
+						
+			ConstantPlayer1.text = staticSongSettings.boyfriend;
+			ConstantPlayer2.text = staticSongSettings.dad;
+			ConstantGirlfriend.text = staticSongSettings.girlfriend;
+			ConstantStage.text = staticSongSettings.stage;
+		}
+
 		// New event buttons
 		var removeButton:FlxButton = new FlxButton(eventDropDown.x + eventDropDown.width + 10, eventDropDown.y, '-', function()
 		{
@@ -1097,6 +1148,14 @@ class ChartingState extends MusicBeatState
 		{
 			changeEventSelected(1);
 		});
+
+		
+		var SaveStaticSettings:FlxButton = new FlxButton(20, 330, 'Save Static Settings', function() {
+			var staticDataJsoned = haxe.Json.stringify(staticData, "\t");
+			sys.io.File.saveContent(Paths.json(_song.song.toLowerCase() + "/StaticSettings"), staticDataJsoned);
+		});
+		tab_group_event.add(SaveStaticSettings);
+		
 		moveRightButton.setGraphicSize(Std.int(moveLeftButton.width), Std.int(moveLeftButton.height));
 		moveRightButton.updateHitbox();
 		moveRightButton.label.size = 12;
@@ -1110,6 +1169,10 @@ class ChartingState extends MusicBeatState
 		tab_group_event.add(descText);
 		tab_group_event.add(value1InputText);
 		tab_group_event.add(value2InputText);
+		tab_group_event.add(ConstantPlayer1);
+		tab_group_event.add(ConstantPlayer2);
+		tab_group_event.add(ConstantGirlfriend);
+		tab_group_event.add(ConstantStage);
 		tab_group_event.add(eventDropDown);
 
 		UI_box.addGroup(tab_group_event);
@@ -1632,9 +1695,17 @@ class ChartingState extends MusicBeatState
 			}
 			else if(sender == gameOverEndInputText) {
 				_song.gameOverEnd = gameOverEndInputText.text;
+			} else if ((sender == ConstantPlayer1) || (sender == ConstantPlayer2) || (sender == ConstantGirlfriend) || (sender == ConstantStage)) {
+			    staticData = { 
+				   boyfriend: ConstantPlayer1.text, 
+				   dad: ConstantPlayer2.text,
+				   stage: ConstantStage.text,
+				   girlfriend: ConstantGirlfriend.text
+			   };
+			  
 			}
 			else if(curSelectedNote != null)
-			{
+				{
 				if(sender == value1InputText) {
 					if(curSelectedNote[1][curEventSelected] != null)
 					{

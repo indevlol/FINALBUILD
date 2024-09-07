@@ -75,8 +75,13 @@ import tea.SScript;
  * "function eventEarlyTrigger" - Used for making your event start a few MILLISECONDS earlier
  * "function triggerEvent" - Called when the song hits your event's timestamp, this is probably what you were looking for
 **/
-class PlayState extends MusicBeatState
-{
+
+typedef StaticSongSettings = {
+	dad:String, boyfriend:String, stage:String, girlfriend:String
+}
+
+
+class PlayState extends MusicBeatState {
 	public static var STRUM_X = 42;
 	public static var STRUM_X_MIDDLESCROLL = -278;
 
@@ -264,6 +269,8 @@ class PlayState extends MusicBeatState
 	public var startCallback:Void->Void = null;
 	public var endCallback:Void->Void = null;
 
+	
+
 	override public function create()
 	{
 		//trace('Playback Rate: ' + playbackRate);
@@ -335,8 +342,29 @@ class PlayState extends MusicBeatState
 		if(SONG.stage == null || SONG.stage.length < 1) {
 			SONG.stage = StageData.vanillaSongStage(songName);
 		}
-		curStage = SONG.stage;
-
+		var SharedSettings:Map<String, String> = new Map<String, String>();
+		
+		if (FileSystem.exists(Paths.json(songName + "/StaticSettings"))) {
+			var settingsFromFile = File.getContent(Paths.json(songName + "/StaticSettings"));
+			
+			var staticSongSettings:StaticSongSettings = haxe.Json.parse(settingsFromFile);
+			
+			SharedSettings = [
+				"dad" => staticSongSettings.dad,
+				"boyfriend" => staticSongSettings.boyfriend,
+				"girlfriend" => staticSongSettings.girlfriend,
+				"stage" => staticSongSettings.stage
+			];
+		} else {
+			SharedSettings = [
+				"dad" => SONG.player2,
+				"boyfriend" => SONG.player1,
+				"girlfriend" => SONG.gfVersion,
+				"stage" => SONG.stage
+			];
+		}
+		curStage = SharedSettings["stage"];
+		
 		var stageData:StageFile = StageData.getStageFile(curStage);
 		if(stageData == null) { //Stage couldn't be found, create a dummy stage for preventing a crash
 			stageData = StageData.dummy();
@@ -431,22 +459,24 @@ class PlayState extends MusicBeatState
 		startHScriptsNamed('stages/' + curStage + '.hx');
 		#end
 
-		if (!stageData.hide_girlfriend)
-		{
+
+		
+
+		if (!stageData.hide_girlfriend) {
 			if(SONG.gfVersion == null || SONG.gfVersion.length < 1) SONG.gfVersion = 'gf'; //Fix for the Chart Editor
-			gf = new Character(0, 0, SONG.gfVersion);
+			gf = new Character(0, 0, SharedSettings["girlfriend"]);
 			startCharacterPos(gf);
 			gf.scrollFactor.set(0.95, 0.95);
 			gfGroup.add(gf);
 			startCharacterScripts(gf.curCharacter);
 		}
 
-		dad = new Character(0, 0, SONG.player2);
+		dad = new Character(0, 0, SharedSettings["dad"]);
 		startCharacterPos(dad, true);
 		dadGroup.add(dad);
 		startCharacterScripts(dad.curCharacter);
 
-		boyfriend = new Character(0, 0, SONG.player1, true);
+		boyfriend = new Character(0, 0, SharedSettings["boyfriend"], true);
 		startCharacterPos(boyfriend);
 		boyfriendGroup.add(boyfriend);
 		startCharacterScripts(boyfriend.curCharacter);
