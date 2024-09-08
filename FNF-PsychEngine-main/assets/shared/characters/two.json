@@ -1,0 +1,80 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				462,
+				143
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "twoidle"
+		},
+		{
+			"offsets": [
+				451,
+				139
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "twoleft"
+		},
+		{
+			"offsets": [
+				434,
+				137
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "twodown"
+		},
+		{
+			"offsets": [
+				456,
+				143
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "twoup"
+		},
+		{
+			"offsets": [
+				473,
+				143
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "tworight"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/two",
+	"position": [
+		0,
+		250
+	],
+	"healthicon": "two",
+	"flip_x": false,
+	"healthbar_colors": [
+		72,
+		196,
+		74
+	],
+	"camera_position": [
+		60,
+		80
+	],
+	"sing_duration": 6.1,
+	"scale": 1,
+	"_editor_isPlayer": false
+}

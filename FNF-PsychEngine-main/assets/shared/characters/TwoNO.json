@@ -1,0 +1,36 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				462,
+				143
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "NO",
+			"loop": false,
+			"name": "NO! instance 1"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/twoNO!",
+	"position": [
+		0,
+		250
+	],
+	"healthicon": "two",
+	"flip_x": false,
+	"healthbar_colors": [
+		72,
+		196,
+		74
+	],
+	"camera_position": [
+		60,
+		80
+	],
+	"sing_duration": 6.1,
+	"scale": 1,
+	"_editor_isPlayer": false
+}

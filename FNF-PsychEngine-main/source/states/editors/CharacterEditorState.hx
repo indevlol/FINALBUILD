@@ -488,6 +488,8 @@ class CharacterEditorState extends MusicBeatState
 	var animationIndicesInputText:FlxUIInputText;
 	var animationFramerate:FlxUINumericStepper;
 	var animationLoopCheckBox:FlxUICheckBox;
+
+
 	function addAnimationsUI()
 	{
 		var tab_group = new FlxUI(null, UI_box);
@@ -636,6 +638,8 @@ class CharacterEditorState extends MusicBeatState
 				character.healthColorArray[2] = coolColor.blue;
 				updateHealthBar();
 			});
+
+
 
 		healthIconInputText = new FlxUIInputText(15, imageInputText.y + 35, 75, healthIcon.getCharacter(), 8);
 
