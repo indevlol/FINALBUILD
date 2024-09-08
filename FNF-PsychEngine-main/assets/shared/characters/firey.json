@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "FR_IDLE"
+			"fps": 24,
+			"name": "FR_IDLE",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				127,
 				9
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "FR_LEFT"
+			"fps": 24,
+			"name": "FR_LEFT",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				5,
 				-13
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "FR_DOWN"
+			"fps": 24,
+			"name": "FR_DOWN",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				77,
 				41
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "FR_UP"
+			"fps": 24,
+			"name": "FR_UP",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-14,
 				2
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "FR_RIGHT"
+			"fps": 24,
+			"name": "FR_RIGHT",
+			"indices": []
 		}
 	],
 	"vocals_file": "",
@@ -66,9 +66,9 @@
 	"healthicon": "firey",
 	"flip_x": false,
 	"healthbar_colors": [
-		161,
-		161,
-		161
+		255,
+		120,
+		30
 	],
 	"camera_position": [
 		60,

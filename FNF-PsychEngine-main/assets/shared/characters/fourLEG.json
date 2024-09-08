@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				410,
+				-80
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "4idle"
+		},
+		{
+			"offsets": [
+				420,
+				-82
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "4left"
+		},
+		{
+			"offsets": [
+				370,
+				-85
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "4down"
+		},
+		{
+			"offsets": [
+				375,
+				-77
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "4up"
+		},
+		{
+			"offsets": [
+				390,
+				-80
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "4right"
+		},
+		{
+			"offsets": [
+				430,
+				-100
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "sreech",
+			"indices": [],
+			"name": "4vore"
+		},
+		{
+			"offsets": [
+				397,
+				-82
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "bfb",
+			"indices": [],
+			"name": "4smth"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/four",
+	"position": [
+		0,
+		-50
+	],
+	"healthicon": "four",
+	"flip_x": false,
+	"healthbar_colors": [
+		51,
+		124,
+		207
+	],
+	"camera_position": [
+		-590,
+		50
+	],
+	"sing_duration": 6.1,
+	"scale": 1.1
+}
