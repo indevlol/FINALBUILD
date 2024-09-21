@@ -76,10 +76,6 @@ import tea.SScript;
  * "function triggerEvent" - Called when the song hits your event's timestamp, this is probably what you were looking for
 **/
 
-typedef StaticSongSettings = {
-	dad:String, boyfriend:String, stage:String, girlfriend:String
-}
-
 
 class PlayState extends MusicBeatState {
 	public static var STRUM_X = 42;
@@ -342,28 +338,7 @@ class PlayState extends MusicBeatState {
 		if(SONG.stage == null || SONG.stage.length < 1) {
 			SONG.stage = StageData.vanillaSongStage(songName);
 		}
-		var SharedSettings:Map<String, String> = new Map<String, String>();
-		
-		if (FileSystem.exists(Paths.json(songName + "/StaticSettings"))) {
-			var settingsFromFile = File.getContent(Paths.json(songName + "/StaticSettings"));
-			
-			var staticSongSettings:StaticSongSettings = haxe.Json.parse(settingsFromFile);
-			
-			SharedSettings = [
-				"dad" => staticSongSettings.dad,
-				"boyfriend" => staticSongSettings.boyfriend,
-				"girlfriend" => staticSongSettings.girlfriend,
-				"stage" => staticSongSettings.stage
-			];
-		} else {
-			SharedSettings = [
-				"dad" => SONG.player2,
-				"boyfriend" => SONG.player1,
-				"girlfriend" => SONG.gfVersion,
-				"stage" => SONG.stage
-			];
-		}
-		curStage = SharedSettings["stage"];
+		curStage = SONG.stage;
 		
 		var stageData:StageFile = StageData.getStageFile(curStage);
 		if(stageData == null) { //Stage couldn't be found, create a dummy stage for preventing a crash
@@ -464,19 +439,19 @@ class PlayState extends MusicBeatState {
 
 		if (!stageData.hide_girlfriend) {
 			if(SONG.gfVersion == null || SONG.gfVersion.length < 1) SONG.gfVersion = 'gf'; //Fix for the Chart Editor
-			gf = new Character(0, 0, SharedSettings["girlfriend"]);
+			gf = new Character(0, 0, SONG.gfVersion);
 			startCharacterPos(gf);
 			gf.scrollFactor.set(0.95, 0.95);
 			gfGroup.add(gf);
 			startCharacterScripts(gf.curCharacter);
 		}
 
-		dad = new Character(0, 0, SharedSettings["dad"]);
+		dad = new Character(0, 0, SONG.player2);
 		startCharacterPos(dad, true);
 		dadGroup.add(dad);
 		startCharacterScripts(dad.curCharacter);
 
-		boyfriend = new Character(0, 0, SharedSettings["boyfriend"], true);
+		boyfriend = new Character(0, 0, SONG.player1, true);
 		startCharacterPos(boyfriend);
 		boyfriendGroup.add(boyfriend);
 		startCharacterScripts(boyfriend.curCharacter);
@@ -2041,6 +2016,18 @@ class PlayState extends MusicBeatState {
 					FlxG.camera.zoom += flValue1;
 					camHUD.zoom += flValue2;
 				}
+			
+			case 'Zoom':
+				
+				FlxTween.tween(FlxG.camera, {"zoom": flValue1}, 0.3);
+
+				if (value2 == 'true') {
+					camZooming = true;
+				}
+				else {
+					camZooming = false;
+				}
+
 
 			case 'Play Animation':
 				//trace('Anim to play: ' + value1);

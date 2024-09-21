@@ -80,7 +80,8 @@ class ChartingState extends MusicBeatState
 		['Change Character', "Value 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"],
 		['Change Scroll Speed', "Value 1: Scroll Speed Multiplier (1 is default)\nValue 2: Time it takes to change fully in seconds."],
 		['Set Property', "Value 1: Variable name\nValue 2: New value"],
-		['Play Sound', "Value 1: Sound file name\nValue 2: Volume (Default: 1), ranges from 0 to 1"]
+		['Play Sound', "Value 1: Sound file name\nValue 2: Volume (Default: 1), ranges from 0 to 1"],
+		['Zoom', 'Value1 : Zooming Value, \nValue2: Go Back to normal zooming??? true/false']
 	];
 
 	var _file:FileReference;
@@ -144,12 +145,6 @@ class ChartingState extends MusicBeatState
 	var value1InputText:FlxUIInputText;
 	var value2InputText:FlxUIInputText;
 	var currentSongName:String;
-
-	var ConstantPlayer1:FlxUIInputText;
-	var ConstantPlayer2:FlxUIInputText;
-	var ConstantGirlfriend:FlxUIInputText;
-	var ConstantStage:FlxUIInputText;
-
 
 	var zoomTxt:FlxText;
 
@@ -1044,44 +1039,7 @@ class ChartingState extends MusicBeatState
 		value2InputText = new FlxUIInputText(20, 150, 100, "");
 		blockPressWhileTypingOn.push(value2InputText);
 
-
-		var text:FlxText = new FlxText(20, 170, 0, "Constant Boyfriend :");
-		tab_group_event.add(text);
-		ConstantPlayer1 = new FlxUIInputText(20, 190, 100, "");
-		blockPressWhileTypingOn.push(ConstantPlayer1);
-
-
-		
-		var text:FlxText = new FlxText(20, 210, 0, "Constant Dad:");
-		tab_group_event.add(text);
-		ConstantPlayer2 = new FlxUIInputText(20, 230, 100, "");
-		blockPressWhileTypingOn.push(ConstantPlayer2);
-
-		
-		var text:FlxText = new FlxText(20, 250, 0, "Constant Girlfriend:");
-		tab_group_event.add(text);
-		ConstantGirlfriend = new FlxUIInputText(20, 270, 100, "");
-		blockPressWhileTypingOn.push(ConstantGirlfriend);
-
-		
-		var text:FlxText = new FlxText(20, 290, 0, "Constant Stage:");
-		tab_group_event.add(text);
-		ConstantStage = new FlxUIInputText(20, 310, 100, "");
-		blockPressWhileTypingOn.push(ConstantStage);
-
 	
-	
-	
-		if(FileSystem.exists(Paths.json(_song.song.toLowerCase() + "/StaticSettings"))) {
-			var settingsFromFile = File.getContent(Paths.json(_song.song.toLowerCase() + "/StaticSettings"));
-
-			var staticSongSettings:StaticSongSettings = haxe.Json.parse(settingsFromFile);
-						
-			ConstantPlayer1.text = staticSongSettings.boyfriend;
-			ConstantPlayer2.text = staticSongSettings.dad;
-			ConstantGirlfriend.text = staticSongSettings.girlfriend;
-			ConstantStage.text = staticSongSettings.stage;
-		}
 
 		// New event buttons
 		var removeButton:FlxButton = new FlxButton(eventDropDown.x + eventDropDown.width + 10, eventDropDown.y, '-', function()
@@ -1169,10 +1127,6 @@ class ChartingState extends MusicBeatState
 		tab_group_event.add(descText);
 		tab_group_event.add(value1InputText);
 		tab_group_event.add(value2InputText);
-		tab_group_event.add(ConstantPlayer1);
-		tab_group_event.add(ConstantPlayer2);
-		tab_group_event.add(ConstantGirlfriend);
-		tab_group_event.add(ConstantStage);
 		tab_group_event.add(eventDropDown);
 
 		UI_box.addGroup(tab_group_event);
@@ -1695,15 +1649,7 @@ class ChartingState extends MusicBeatState
 			}
 			else if(sender == gameOverEndInputText) {
 				_song.gameOverEnd = gameOverEndInputText.text;
-			} else if ((sender == ConstantPlayer1) || (sender == ConstantPlayer2) || (sender == ConstantGirlfriend) || (sender == ConstantStage)) {
-			    staticData = { 
-				   boyfriend: ConstantPlayer1.text, 
-				   dad: ConstantPlayer2.text,
-				   stage: ConstantStage.text,
-				   girlfriend: ConstantGirlfriend.text
-			   };
-			  
-			}
+			} 
 			else if(curSelectedNote != null)
 				{
 				if(sender == value1InputText) {
