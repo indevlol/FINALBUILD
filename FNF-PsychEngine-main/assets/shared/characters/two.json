@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				462,
 				143
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "twoidle"
+			"fps": 24,
+			"name": "twoidle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				451,
 				139
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "twoleft"
+			"fps": 24,
+			"name": "twoleft",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				434,
 				137
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "twodown"
+			"fps": 24,
+			"name": "twodown",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				456,
 				143
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
-			"name": "twoup"
+			"fps": 24,
+			"name": "twoup",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				473,
 				143
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "tworight"
+			"fps": 24,
+			"name": "tworight",
+			"indices": []
 		}
 	],
 	"vocals_file": "",
@@ -71,8 +71,8 @@
 		74
 	],
 	"camera_position": [
-		60,
-		80
+		-450,
+		-130
 	],
 	"sing_duration": 6.1,
 	"scale": 1,

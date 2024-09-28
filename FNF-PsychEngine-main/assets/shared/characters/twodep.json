@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				462,
 				143
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "twodepidle instance 1"
+			"fps": 24,
+			"name": "twodepidle instance 1",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				461,
 				142
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "twodepleft instance 1"
+			"fps": 24,
+			"name": "twodepleft instance 1",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				461,
 				142
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "twodepdown instance 1"
+			"fps": 24,
+			"name": "twodepdown instance 1",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				462,
 				142
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
-			"name": "twodepup instance 1"
+			"fps": 24,
+			"name": "twodepup instance 1",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				461,
 				142
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "twodepright instance 1"
+			"fps": 24,
+			"name": "twodepright instance 1",
+			"indices": []
 		}
 	],
 	"vocals_file": "",
@@ -71,8 +71,8 @@
 		74
 	],
 	"camera_position": [
-		60,
-		80
+		-440,
+		-90
 	],
 	"sing_duration": 6.1,
 	"scale": 1,

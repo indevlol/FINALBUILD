@@ -1,41 +1,42 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				29
 			],
-			"anim": "gameover",
+			"loop": false,
 			"fps": 24,
-			"name": "bfobj_GAMEOVER instance",
-			"indices": []
+			"anim": "gameover",
+			"indices": [],
+			"name": "bfobj_GAMEOVER instance"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-4,
 				10
 			],
-			"anim": "confirm",
+			"loop": false,
 			"fps": 24,
-			"name": "bfobj_GAMEOVERCONFIRM instance",
-			"indices": []
+			"anim": "confirm",
+			"indices": [],
+			"name": "bfobj_GAMEOVERCONFIRM instance"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-4,
 				12
 			],
-			"anim": "loop",
+			"loop": false,
 			"fps": 24,
-			"name": "bfobj_GAMEOVERLOOP instance",
-			"indices": []
+			"anim": "loop",
+			"indices": [],
+			"name": "bfobj_GAMEOVERLOOP instance"
 		}
 	],
+	"vocals_file": "",
 	"no_antialiasing": false,
-	"image": "characters/bfobjectNEWGAMEOVER",
+	"image": "characters/bfobjectNEWDEAD",
 	"position": [
 		140,
 		420
@@ -52,5 +53,6 @@
 		0
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 1,
+	"_editor_isPlayer": true
 }
